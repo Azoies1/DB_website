@@ -9,13 +9,13 @@ TEMPLATES_AUTO_RELOAD = True
 def index(name=None):
     return render_template('mainpage.html', name=name)
 
-@app.route('/sql')
-def sql():
+@app.route('/sql/{tableName}', methods = ["GET"])
+def sql(tableName):
     cnx = dbConnector.getSQLConn()
     pageResult = ""
     if cnx != None:
         cursor = cnx.cursor()
-        query = ('SELECT * FROM Employee')
+        query = ('SELECT * FROM ' + tableName)
         cursor.execute(query)
         result = cursor.fetchall()
         for tuple in result:
