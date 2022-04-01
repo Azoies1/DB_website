@@ -1,4 +1,4 @@
-//To connect all these tables to the ResearchCenter I had to add (ResearchCenterID)to ResearchCenter table 
+--To connect all these tables to the ResearchCenter I had to add (ResearchCenterID)to ResearchCenter table 
 
 CREATE TABLE ResearchCenter (
    
@@ -59,7 +59,7 @@ CREATE TABLE Researcher (
     );
     
     
-    // Populating new tables 
+    -- Populating new tables 
    
    insert into ResearchTeam (teamID, teamLeader, teamName, researchCenterID) values (1, 'Damiano', 'Zulauf and Sons', 1);
    insert into ResearchTeam (teamID, teamLeader, teamName, researchCenterID) values (2, 'Alica', 'Lubowitz Inc', 2);

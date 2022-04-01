@@ -75,6 +75,7 @@ Create Table HistoryOfEmployment(
 --Product
 Create Table Product(
 	productID INT AUTO_INCREMENT,
+    UPC INT UNIQUE,
 	name VARCHAR (255),
 	description VARCHAR (255),
 	volume FLOAT,
