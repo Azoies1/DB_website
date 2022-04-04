@@ -10,8 +10,13 @@ SQLengine, SQLconnec = dbConnector.sqlConnection()
 
 
 @app.route('/')
+@app.route('/index')
 def index(name=None):
     return render_template('mainpage.html', name=name)
+
+@app.route('/addEntry')
+def addEntry():
+    return render_template('addentry.html')
 
 @app.route('/sql/<tableName>', methods = ["GET"])
 def sqlQuery(tableName):

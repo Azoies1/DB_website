@@ -8,15 +8,22 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
 </head>
 <body>
-    <button type="button" class="topbtn" href="ViewTable.js">
-        View Table
-    </button>
-    <button type="button" class="topbtn" href="AddEntry.js">
-        Add An Entry
-    </button>
-    <button type="button" class="topbtn" href="SpecialQueries.js">
-        Special Queries
-    </button>
+    <a href="{{ url_for('index') }}">
+        <button type="button" class="topbtn">
+            View Table
+        </button>
+    </a>
+    <a href="{{ url_for('addEntry') }}">
+        <button type="button" class="topbtn">
+            Add An Entry
+        </button>
+    </a>
+    <a href="">
+        <button type="button" class="topbtn">
+            Special Queries
+        </button>
+    </a>
+
     <br/>
     <h2>A Simple Database Application System for the COVID-19 Pharmaceutical Companies</h2>
     <br/>
