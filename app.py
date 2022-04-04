@@ -1,13 +1,17 @@
 from importlib.metadata import metadata
 from flask import Flask, render_template, request
 import dbConnector
+from sqlalchemy.orm import sessionmaker
+import json
+import models 
+
 
 app = Flask(__name__)
 TEMPLATES_AUTO_RELOAD = True
 # set FLASK_ENV= development
 
 SQLengine, SQLconnec = dbConnector.sqlConnection()
-
+Session = None
 
 @app.route('/')
 def index(name=None):
@@ -31,7 +35,7 @@ def sqlQuery(tableName):
             pageResult += "<br>"
     return (pageResult)
 
-@app.route('/sql1/<tableName>', methods = ["GET"])
+@app.route('/sql/<tableName>/query/', methods = ["GET"])
 def sqlGet(tableName):
     
     args = request.args
@@ -41,8 +45,23 @@ def sqlGet(tableName):
     pageResult = ""
     
     if SQLengine != None and SQLconnec != None:
-        for t in tableMetaData.columns:
-            pageResult += t.name
+        global Session
+        if Session == None:
+            Session = sessionmaker(bind = SQLengine)
+        
+        query = ('SELECT * FROM ' + tableName)
+
+        if len(args) > 0:
+            query += " WHERE "
+            for index, key in enumerate(args):
+                query += key + " = " + args.get(key) + " "
+                if index != len(args)-1:
+                    query += ', '
+
+        print(query)
+        result = SQLconnec.execute(query)
+        pageResult += (json.dumps([dict(r) for r in result]))
+
 
     else:
         print('SQL Connection invalid')
