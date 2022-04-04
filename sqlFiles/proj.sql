@@ -82,11 +82,14 @@ Create Table Product(
 	weight FLOAT, 
 	defaultPrice FLOAT,
     purchaseID INT,
+    pharmID INT, 
 	status VARCHAR (255),
     CHECK (status = 'Available' OR status = 'Not Available'),
 	PRIMARY KEY (productID),
     FOREIGN KEY(purchaseID)
-        REFERENCES Purchase(purchaseID)
+        REFERENCES Purchase(purchaseID),
+    FOREIGN KEY (pharmID)
+        REFERENCES PharmCompany (pharmID)
 );
 
 --Client
@@ -113,10 +116,8 @@ Create Table Purchase (
     productPurchased VARCHAR(255),
     productQuantity INT,
     productPrice FLOAT,
-    clientID INT,
     PRIMARY KEY (purchaseID),
-    FOREIGN KEY (clientID)
-        REFERENCES Client(clientID)
+    
 );
 
 --Contract
@@ -128,14 +129,16 @@ Create Table Contract (
     expectedDeliveryDayProduct DATE,
     clientID INT,
     pharmID INT,
+    purchaseID INT,
     PRIMARY KEY (contractID),
     FOREIGN KEY (pharmID)
         REFERENCES PharmCompany(pharmID),
     FOREIGN KEY (clientID)
         REFERENCES Client(clientID),
     FOREIGN KEY (employeeID)
-        REFERENCES Employee(employeeID)
-
+        REFERENCES Employee(employeeID),
+    FOREIGN KEY (purchaseID)
+        REFERENCES Purchase (purchaseID)
 );
 
 --HeadOffice
@@ -188,9 +191,12 @@ CREATE TABLE Task (
 CREATE TABLE Ceo(
     ceoID INT AUTO_INCREMENT,
     employeeID INT UNIQUE,
+    pharmID INT,
     PRIMARY KEY(ceoID),
     FOREIGN KEY (employeeID)
         REFERENCES Employee(employeeID),
     FOREIGN KEY (pharmCompanyID)
-        REFERENCES PharmCompany(pharmCompanyID)
+        REFERENCES PharmCompany(pharmCompanyID),
+    FOREIGN KEY (pharmID)
+        REFERENCES PharmCompany (pharmID)
 );
