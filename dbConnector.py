@@ -26,7 +26,7 @@ def getSQLConn():
 
 def sqlConnection():
     try:
-        engine = db.create_engine('mysql://{user}:{password}@{host}:{port}/{database}'.format(**config))
+        engine = db.create_engine('mysql://{user}:{password}@{host}:{port}/{database}'.format(**config), echo=True)
         connection = engine.connect()
         return engine,connection
     except Exception as err:
