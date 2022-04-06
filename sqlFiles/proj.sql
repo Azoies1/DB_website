@@ -165,7 +165,7 @@ CREATE TABLE ResearchCenter (
         REFERENCES Facility(facilityID),
 ) ;
 
-
+--ResearchTeam
 CREATE TABLE ResearchTeam (
 
     teamID INT, 
@@ -177,7 +177,7 @@ CREATE TABLE ResearchTeam (
 		REFERENCES ResearchCenter(researchCenterID)
  );
  
- 
+ --Project
  CREATE TABLE Project (
 
 	projectID INT,
@@ -193,6 +193,7 @@ CREATE TABLE ResearchTeam (
 		REFERENCES ResearchCenter(researchCenterID)
     );
 
+--Researcher
 CREATE TABLE Researcher (
 
 	researcherID INT ,
