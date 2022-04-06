@@ -1,5 +1,4 @@
 from contextlib import nullcontext
-import mysql.connector
 import sqlalchemy as db
 
 config = {
@@ -10,18 +9,6 @@ config = {
     'database': 'yoc353_4',
     'raise_on_warnings': True
     }
-
-def getSQLConn():
-    cnx = None
-    
-    try:
-        cnx = mysql.connector.connect(**config)
-
-    except mysql.connector.Error as err:
-        print(err)
-    
-    return cnx
-
 
 
 def sqlConnection():
