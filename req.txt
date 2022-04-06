@@ -1,7 +1,16 @@
 click==8.0.4
 colorama==0.4.4
 Flask==2.0.3
+Flask-Cors==3.0.10
+flask-sqlacodegen==1.1.8
+greenlet==1.1.2
+inflect==5.4.0
 itsdangerous==2.1.0
 Jinja2==3.0.3
 MarkupSafe==2.1.0
+mysql-connector-python==8.0.28
+mysqlclient==2.1.0
+protobuf==3.19.4
+six==1.16.0
+SQLAlchemy==1.4.32
 Werkzeug==2.0.3
