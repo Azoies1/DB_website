@@ -165,6 +165,59 @@ CREATE TABLE ResearchCenter (
         REFERENCES Facility(facilityID),
 ) ;
 
+
+CREATE TABLE ResearchTeam (
+
+    teamID INT, 
+    teamName VARCHAR (255),
+    teamLeader VARCHAR (255),
+    researchCenterID INT,
+    PRIMARY KEY (teamID),
+    FOREIGN KEY (researchCenterID)
+		REFERENCES ResearchCenter(researchCenterID)
+ );
+ 
+ 
+ CREATE TABLE Project (
+
+	projectID INT,
+       name VARCHAR (255),
+       startDate DATE,
+       endDate DATE,
+       teamID INT,
+       researchCenterID INT,
+      PRIMARY KEY (projectID),
+      FOREIGN KEY (teamID)
+		REFERENCES ResearchTeam (teamID),
+	FOREIGN KEY (researchCenterID)
+		REFERENCES ResearchCenter(researchCenterID)
+    );
+
+CREATE TABLE Researcher (
+
+	researcherID INT ,
+        startDate DATE,
+        EndDate DATE,
+    	totalHoursWorking INT,
+    	teamID INT,
+    	projectID INT,
+    	researchCenterID INT,
+	employeeID INT,
+	pharmID INT,
+    PRIMARY KEY (researcherID),
+    FOREIGN KEY (teamID)
+		REFERENCES ResearchTeam (teamID),
+    FOREIGN KEY (projectID)
+		REFERENCES Project (projectId),
+	FOREIGN KEY (researchCenterId)
+		REFERENCES ResearchCenter (researchCenterID)
+	FOREIGN KEY (employeeID)
+		REFERENCES Employee (employeeID)
+	FOREIGN KEY (pharmId)
+		REFERENCES PharmCompany (pharmID)
+    ); 
+
+
 --ManufacturingFacility
 CREATE TABLE ManufacturingFacility(
     manufacturingFacilityID INT AUTO_INCREMENT,
