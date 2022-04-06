@@ -1,4 +1,419 @@
-<title> Hello guys </title>
-<h1>First test with the Web App</h1>
-<h2>We will need to connect create rest apis and connect it to the DB!</h2>
-Web app with python flask
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Simple Database Application System for the COVID-19 Pharmaceutical Companies</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+    <a href="{{ url_for('index') }}">
+        <button type="button" class="topbtn">
+            View Table
+        </button>
+    </a>
+    <a href="{{ url_for('addEntry') }}">
+        <button type="button" class="topbtn">
+            Add An Entry
+        </button>
+    </a>
+    <a href="">
+        <button type="button" class="topbtn">
+            Special Queries
+        </button>
+    </a>
+
+    <br/>
+    <h2>A Simple Database Application System for the COVID-19 Pharmaceutical Companies</h2>
+    <br/>
+    
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
+<script>
+    function setVisibility(tableName){
+        const tablesToHide = document.getElementsByClassName('toHide');
+        for (const tableToHide of tablesToHide) {
+            tableToHide.style.display='none';
+        }
+        const tablestoShow = document.getElementsByClassName(tableName);
+        tablestoShow[0].style.display='block';
+    }
+</script>
+
+<div class="dropdown">
+  <button class="dropbtn">Choose One</button>
+  <div class="dropdown-content">
+  <a href="#" onclick="setVisibility('table-Company')">Company</a>
+  <a href="#" onclick="setVisibility('table-Facility')">Facility</a>
+  <a href="#" onclick="setVisibility('table-Employee')">Employee</a>
+  <a href="#" onclick="setVisibility('table-Team')">Team</a>
+  <a href="#" onclick="setVisibility('table-Project')">Project</a>
+  <a href="#" onclick="setVisibility('table-Product')">Product</a>
+  <a href="#" onclick="setVisibility('table-Client')">Client</a>
+  <a href="#" onclick="setVisibility('table-Contract')">Contract</a>
+  </div>
+</div>
+
+<div id="table-test">
+    <h3>TEST TABLE</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pharm ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                    <th>Phone Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                <tr>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                <tr>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td>bla bla</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>   
+                
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Company toHide">
+    <h3>Company</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pharm ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                    <th>Phone Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for companies in Company %}
+                <tr>
+                    <td>{{ companies.pharmID }}</td>
+                    <td>{{ companies.name }}</td>
+                    <td>{{ companies.address }}</td>
+                    <td>{{ companies.city }}</td>
+                    <td>{{ companies.province }}</td>
+                    <td>{{ companies.postalCode }}</td>
+                    <td>{{ companies.country }}</td>
+                    <td>{{ companies.phoneNumber }}</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Facility toHide">
+    <h3>Facility</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pharm ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                    <th>Phone Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for facilities in Facility %}
+                <tr>
+                    <td>{{ facilities.pharmID }}</td>
+                    <td>{{ facilities.name }}</td>
+                    <td>{{ facilities.address }}</td>
+                    <td>{{ facilities.city }}</td>
+                    <td>{{ facilities.province }}</td>
+                    <td>{{ facilities.postalCode }}</td>
+                    <td>{{ facilities.country }}</td>
+                    <td>{{ facilities.phoneNumber }}</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Employee toHide">
+    <h3>Employee</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date of Birth</th>
+                    <th>SSN</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                    <th>Citizenship</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                    <th>Start Date</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employees in Employee %}
+                <tr>
+                    <td>{{ employees.firstname }}</td>
+                    <td>{{ employees.lastname }}</td>
+                    <td>{{ employees.dateofbirth }}</td>
+                    <td>{{ employees.ssn }}</td>
+                    <td>{{ employees.phonenumber }}</td>
+                    <td>{{ employees.address }}</td>
+                    <td>{{ employees.city }}</td>
+                    <td>{{ employees.province }}</td>
+                    <td>{{ employees.postalcode }}</td>
+                    <td>{{ employees.country }}</td>
+                    <td>{{ employees.citizenship }}</td>
+                    <td>{{ employees.email }}</td>
+                    <td>{{ employees.position }}</td>
+                    <td>{{ employees.salary }}</td>
+                    <td>{{ employees.stardate }}</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Team toHide">
+    <h3>Team</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pharm ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                    <th>Phone Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teams in Team %}
+                <tr>
+                    <td>{{ teams.pharmID }}</td>
+                    <td>{{ teams.name }}</td>
+                    <td>{{ teams.address }}</td>
+                    <td>{{ teams.city }}</td>
+                    <td>{{ teams.province }}</td>
+                    <td>{{ teams.postalcode }}</td>
+                    <td>{{ teams.country }}</td>
+                    <td>{{ teams.phonenumber }}</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Project toHide">
+    <h3>Project</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pharm ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                    <th>Phone Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for projects in Project %}
+                <tr>
+                    <td>{{ projects.pharmID }}</td>
+                    <td>{{ projects.name }}</td>
+                    <td>{{ projects.address }}</td>
+                    <td>{{ projects.city }}</td>
+                    <td>{{ projects.province }}</td>
+                    <td>{{ projects.postalcode }}</td>
+                    <td>{{ projects.country }}</td>
+                    <td>{{ projects.phonenumber }}</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Product toHide">
+    <h3>Products</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Volume</th>
+                    <th>Weight</th>
+                    <th>Default Price</th>
+                    <th>Status</th>
+                    <th>PurchaseID</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for products in Product %}
+                <tr>
+                    <td>{{ products.productID }}</td>
+                    <td>{{ products.name }}</td>
+                    <td>{{ products.description }}</td>
+                    <td>{{ products.volume }}</td>
+                    <td>{{ products.weight }}</td>
+                    <td>{{ products.defaultPrice }}</td>
+                    <td>{{ products.status }}</td>
+                    <td>{{ products.purchaseID }}</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Client toHide">
+    <h3>Client</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pharm ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>Postal Code</th>
+                    <th>Country</th>
+                    <th>Phone Number</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for clients in Client %}
+                <tr>
+                    <td>{{ clients.pharmID }}</td>
+                    <td>{{ clients.name }}</td>
+                    <td>{{ clients.address }}</td>
+                    <td>{{ clients.city }}</td>
+                    <td>{{ clients.province }}</td>
+                    <td>{{ clients.postalcode }}</td>
+                    <td>{{ clients.country }}</td>
+                    <td>{{ clients.phonenumber }}</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Contract toHide">
+    <h3>Contracts</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Contract ID</th>
+                    <th>Employee ID</th>
+                    <th>Employee Name Signed Contract</th>
+                    <th>Date Of Signed Contract</th>
+                    <th>Expected Delivery Day Product</th>
+                    <th>Client ID</th>
+                    <th>Pharm ID</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contracts in Contract %}
+                <tr>
+                    <td>{{ contracts.contractID }}</td>
+                    <td>{{ contracts.employeeID }}</td>
+                    <td>{{ contracts.employeeNameSignedContract }}</td>
+                    <td>{{ contracts.dateOfSignedContract }}</td>
+                    <td>{{ contracts.expectedDeliveryDayProduct }}</td>
+                    <td>{{ contracts.clientID }}</td>
+                    <td>{{ contracts.pharmID }}</td>
+                    <td><button>EDIT</button></td>
+                    <td><button>DELETE</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+</div>
+</body>
+</html>

@@ -1,12 +1,13 @@
 from importlib.metadata import metadata
 from flask import Flask, render_template, request
+from flask_cors import CORS
 import dbConnector
 from sqlalchemy.orm import sessionmaker
 import json
 import models 
 
-
 app = Flask(__name__)
+CORS(app)
 TEMPLATES_AUTO_RELOAD = True
 # set FLASK_ENV= development
 
@@ -46,6 +47,12 @@ def addValuesToInsert(stmt:str, values: dict[str,str]):
     return stmt
 
 @app.route('/')
+
+@app.route('/addEntry')
+def addEntry(name=None):
+    return render_template('addEntry.html', name=name)
+
+@app.route('/index')
 def index(name=None):
     return render_template('mainpage.html', name=name)
 

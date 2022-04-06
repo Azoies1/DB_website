@@ -142,8 +142,7 @@ Create Table Contract (
 CREATE TABLE HeadOffice (
 	headOfficeID INT AUTO_INCREMENT,
     webSite VARCHAR (255),
-    publicEmail VARCHAR (255),
-    clientEmail VARCHAR(255),
+    emailAddress VARCHAR (255),
     ceoID INT UNIQUE,
     facilityID INT,
     PRIMARY KEY (headOfficeID),
@@ -191,5 +190,7 @@ CREATE TABLE Ceo(
     employeeID INT UNIQUE,
     PRIMARY KEY(ceoID),
     FOREIGN KEY (employeeID)
-        REFERENCES Employee(employeeID)
+        REFERENCES Employee(employeeID),
+    FOREIGN KEY (pharmCompanyID)
+        REFERENCES PharmCompany(pharmCompanyID)
 );

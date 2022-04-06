@@ -1,0 +1,142 @@
+html {
+    overflow-y:scroll;
+  }
+  
+  body {
+    background: linear-gradient(45deg, plum, #5f2c82);
+    font-family: "Roboto", "Open Sans";
+  }
+  
+  nav {
+    float: right;
+  }
+  
+  nav a {
+    padding: 5px 5px; 
+    color: purple;
+  }
+  
+  h2{
+      font-family: Open Sans;
+      padding-top: 50px;
+      text-align:center;
+      color: black;
+  }
+  
+  h3{
+    font-family: Open Sans;
+    padding-top: 20px;
+    text-align:center;
+    color: black;
+  }
+  
+  .dropbtn {
+    background-color: purple;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 16px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 16px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: azure;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: black;
+  }
+  
+  .topbtn {
+    float: right;
+    background-color: plum;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    border-radius: 16px;
+    box-shadow: 0 9px #999;
+  
+  }
+  
+  .topbtn:hover {
+    opacity: 0.8;
+  }
+  
+  .topbtn:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    table-layout:fixed;
+      width: 95%;
+      border-collapse: collapse;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+  
+  th,td {
+      padding: 15px;
+      background-color: rgba(255,255,255,0.2);
+      color: #fff;
+    text-align: center;
+  }
+  
+  td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+  }
+  
+  tr:hover {
+    background-color: rgba(255,255,255,0.3);
+  }
+      
+  td:hover::after, th:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .table-Facility, .table-Employee, .table-Team, .table-Project, .table-Product, .table-Client, .table-Contract {
+    display:none;
+  }
+  
