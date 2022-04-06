@@ -153,71 +153,74 @@ UPDATE Task
 INNER JOIN Employee ON Task.EmployeeID = Employee.employeeID
 SET Task.facilityID = Employee.facilityID;
 
---HeadOffice
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('weather.com', 'sbrockherst0@techcrunch.com', 1, 1, 1);
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('techcrunch.com', 'aeul1@51.la', 2, 2, 2);
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('prnewswire.com', 'agyurko2@nationalgeographic.com', 3, 3, 3);
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('bing.com', 'obeaney3@cmu.edu', 4, 4, 4);
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('google.com', 'glockhart4@sakura.ne.jp', 5, 5, 5);
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('example.com', 'aferminger5@ebay.com', 6, 6, 6);
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('bravesites.com', 'cbrocklehurst6@nih.gov', 7, 7, 7);
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('hhs.gov', 'cabdy7@bigcartel.com', 8, 8, 8);
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('friendfeed.com', 'droberds8@eventbrite.com', 9, 9, 9);
-insert into HeadOffice (webSite, emailAddress, ceoID, facilityID, headOfficeID) values ('mayoclinic.com', 'bblagburn9@usgs.gov', 10, 10, 10);
+--HeadOffice (updated)
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('weather.com', 'sbrockherst0@techcrunch.com', 1, 1, 'tblevin0@bbb.org');
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('techcrunch.com', 'aeul1@51.la', 2, 2, 'dharhoff1@amazon.de');
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('prnewswire.com', 'agyurko2@nationalgeographic.com', 3, 3, 'scorbould2@whitehouse.gov');
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('bing.com', 'obeaney3@cmu.edu', 4, 4, 'mlynas3@businessweek.com');
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('google.com', 'glockhart4@sakura.ne.jp', 5, 5, 'mmccromley4@narod.ru');
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('example.com', 'aferminger5@ebay.com', 6, 6, 'swalaron5@hatena.ne.jp');
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('bravesites.com', 'cbrocklehurst6@nih.gov', 7, 7, 'cerdes6@purevolume.com');
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('hhs.gov', 'cabdy7@bigcartel.com', 8, 8, 'bdivill7@bigcartel.com');
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('friendfeed.com', 'droberds8@eventbrite.com', 9, 9, 'iprestner8@nydailynews.com');
+insert into HeadOffice (webSite, publicEmail, ceoID, facilityID, clientEmail) values ('mayoclinic.com', 'bblagburn9@usgs.gov', 10, 10, 'bupson9@lulu.com');
 
 UPDATE HeadOffice
 INNER JOIN Ceo ON Ceo.ceoID = HeadOffice.ceoID
 SET facilityID = 
     (SELECT facilityID FROM Employee WHERE Employee.employeeID = Ceo.employeeID)
 
---Contract
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (1, 18, 'Teodor Offiler', '2021-01-05', '2022-09-06', 5, 9);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (2, 5, 'Rafaellle Matthisson', '2021-03-15', '2022-08-10', 1, 5);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (3, 4, 'Harlin Sunter', '2021-01-05', '2021-11-15', 8, 7);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (4, 9, 'Ingar Evetts', '2021-05-09', '2022-02-25', 7, 7);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (5, 3, 'Jesselyn Rego', '2021-08-11', '2021-12-04', 9, 5);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (6, 17, 'Regina Rouchy',  '2022-03-07', '2022-10-01', 3, 8);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (7, 16, 'Chiarra Howsden', '2022-05-05', '2022-11-17', 2, 3);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (8, 8, 'Jaymee MacLleese',  '2022-06-19', '2022-10-27', 6, 4);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (9, 13, 'Chadwick Cluet',  '2021-12-30', '2022-06-27', 2, 8);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (10, 15, 'Karry Twiddle',  '2021-03-28', '2022-09-02', 4, 1);
-insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID) values (11, 22, 'Alano Woolf',  '2022-01-04', '2022-07-10', 9, 10);
+--Contract (updated)
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (1, 18, 'Teodor Offiler', '2021-01-05', '2022-09-06', 5, 9,5);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (2, 5, 'Rafaellle Matthisson', '2021-03-15', '2022-08-10', 1, 5,6);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (3, 4, 'Harlin Sunter', '2021-01-05', '2021-11-15', 8, 7,7);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (4, 9, 'Ingar Evetts', '2021-05-09', '2022-02-25', 7, 7,8);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (5, 3, 'Jesselyn Rego', '2021-08-11', '2021-12-04', 9, 5,9);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (6, 17, 'Regina Rouchy',  '2022-03-07', '2022-10-01', 3, 8,10);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (7, 16, 'Chiarra Howsden', '2022-05-05', '2022-11-17', 2, 3,1);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (8, 8, 'Jaymee MacLleese',  '2022-06-19', '2022-10-27', 6, 4,2);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (9, 13, 'Chadwick Cluet',  '2021-12-30', '2022-06-27', 2, 8,3);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (10, 15, 'Karry Twiddle',  '2021-03-28', '2022-09-02', 4, 1,4);
+insert into Contract (contractID, employeeID, employeeNameSignedContract, dateOfSignedContract, expectedDeliveryDayProduct, clientID, pharmID, purchaseID) values (11, 22, 'Alano Woolf',  '2022-01-04', '2022-07-10', 9, 10,5);
 
---HistoryOfEmployment
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (1, 4, 6);
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (3, 9, 20);
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (6, 3, 16);
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (24, 17, 23);
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (15, 16, 20);
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (8, 7, 2);
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (20, 8, 3);
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (11, 6, 18);
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (14, 23, 19);
-insert into HistoryOfEmployment (hoeID, employeeID, taskID) values (9, 11, 15);
+--HistoryOfEmployment (updated)
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (1, 4, 6);
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (3, 9, 20);
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (6, 3, 16);
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (24, 17, 23);
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (15, 16, 20);
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (8, 7, 2);
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (20, 8, 3);
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (11, 6, 18);
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (14, 23, 19);
+insert into HistoryOfEmployment (historyOfEmploymentID, employeeID, taskID) values (9, 11, 15);
 
---Product
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (1, 'Pfizer-BioNTech', 'mRNA', 50, 5, 50.50, 'Available', 9);
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (2, 'Moderna', 'mRNA',50, 5, 55.50, 'Available', 4);
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (3, 'AstraZeneca', 'Viral Vector', 20, 4, 20.25, 'Not Available', 7);
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (4, 'Pfizer-BioNTech', 'mRNA', 100, 10, 112, 'Available', 10);
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (5, 'Pfizer-BioNTech', 'mRNA', 100, 10, 112, 'Available', 3);
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (6, 'Moderna', 'mRNA', 100, 10, 115, 'Available', 2);
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (7, 'AstraZeneca', 'Viral Vector', 50, 5, 40.25, 'Not Available', 4);
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (8, 'Pfizer-BioNTech', 'mRNA', 100, 10, 112, 'Available', 3);
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (9, 'Pfizer-BioNTech', 'mRNA', 100, 10, 112, 'Available', 2);
-insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID) values (10, 'Moderna', 'mRNA', 100, 10, 115, 'Available', 6);
+--Product (Updated)
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID ) values (1, 'Pfizer-BioNTech', 'mRNA', 50, 5, 50.50, 'Available', 9, 1,1);
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID) values (2, 'Moderna', 'mRNA',50, 5, 55.50, 'Available', 4, 2,2);
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID) values (3, 'AstraZeneca', 'Viral Vector', 20, 4, 20.25, 'Not Available', 7,3,3);
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID) values (4, 'Pfizer-BioNTech', 'mRNA', 100, 10, 112, 'Available', 10,4,4 );
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID) values (5, 'Pfizer-BioNTech', 'mRNA', 100, 10, 112, 'Available', 3,5,5);
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID) values (6, 'Moderna', 'mRNA', 100, 10, 115, 'Available', 2,6,6);
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID) values (7, 'AstraZeneca', 'Viral Vector', 50, 5, 40.25, 'Not Available', 4,7,7);
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID) values (8, 'Pfizer-BioNTech', 'mRNA', 100, 10, 112, 'Available', 3,8,8);
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID) values (9, 'Pfizer-BioNTech', 'mRNA', 100, 10, 112, 'Available', 2,9,9);
+insert into Product (productID, name, description, volume, weight, defaultPrice, status, purchaseID, UPC, pharmID) values (10, 'Moderna', 'mRNA', 100, 10, 115, 'Available', 6,10,10);
 
---Purchase
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (1, 'Pfizer-BioNTech', 60, 3030, 8);
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (2, 'Moderna', 80, 4440, 5);
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (3, 'AstraZeneca', 10, 202.5, 4);
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (4, 'Pfizer-BioNTech', 30, 3360, 9);
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (5, 'Pfizer-BioNTech', 30, 3360, 2);
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (6, 'Moderna', 60, 6900, 7);
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (7, 'AstraZeneca', 15, 603.75, 8);
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (8, 'Pfizer-BioNTech', 60, 6720, 3);
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (9, 'Pfizer-BioNTech', 100, 11200, 2);
-insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice, clientID) values (10, 'Moderna', 50, 5750, 9);
+--Purchase (updated)
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (1, 'Pfizer-BioNTech', 60, 3030);
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (2, 'Moderna', 80, 4440);
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (3, 'AstraZeneca', 10, 202.5);
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (4, 'Pfizer-BioNTech', 30, 3360);
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (5, 'Pfizer-BioNTech', 30, 3360);
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (6, 'Moderna', 60, 6900);
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (7, 'AstraZeneca', 15, 603.75);
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (8, 'Pfizer-BioNTech', 60, 6720);
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (9, 'Pfizer-BioNTech', 100, 11200);
+insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (10, 'Moderna', 50, 5750);
+
+
+
 
 SELECT Table_name, COUNT (*) as count
 FROM (SELECT Table_name from information_schema.Tables) as T
