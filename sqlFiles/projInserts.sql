@@ -1,3 +1,18 @@
+--PharmCompany
+insert into PharmCompany(name) values ('Pfizer');
+insert into PharmCompany(name) values ('Adobe');
+insert into PharmCompany(name) values ('Google');
+insert into PharmCompany(name) values ('Apple');
+insert into PharmCompany(name) values ('Microsoft');
+insert into PharmCompany(name) values ('BioMedical');
+insert into PharmCompany(name) values ('Medicom');
+insert into PharmCompany(name) values ('PharmToWin');
+insert into PharmCompany(name) values ('VaxiLock');
+insert into PharmCompany(name) values ('True Pharm');
+
+
+
+--Facility
 insert into Facility(name, address, city, province, postalCode, country, phoneNumber, pharmID) values('Zoolab','1 Kensington Drive','Oni','Quebec','J1J3K3','Canada','7935209774','1');
 insert into Facility (name, address, city, province, postalCode, country, phoneNumber, pharmID) values ('Fixflex', '2 West Circle', 'Arlington', 'Virginia', 'J7I8W7', 'United States', '7031521485', 4);
 insert into Facility (name, address, city, province, postalCode, country, phoneNumber, pharmID) values ('Namfix', '1 Hintze Pass', 'Phoenix', 'Arizona', 'Y0N5W6', 'United States', '6021864039', 6);
@@ -106,6 +121,19 @@ insert into Ceo (employeeID, pharmID) values (7,2);
 insert into Ceo (employeeID, pharmID) values (27,10);
 insert into Ceo (employeeID, pharmID) values (12,8);
 insert into Ceo (employeeID, pharmID) values (4,9);
+
+--Client
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Parnell', '5 Kensington Court', 'QUEBEC', 'Pennsylvania', '19178', 'Canada', 'Parnell Sinkings', '215-848-0932', 'psinkings0@hhs.gov', 1);
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Justis', '79886 Commercial Place', 'QUEBEC', 'Arizona', '85045', 'Canada', 'Justis Yacobsohn', '480-588-7723', 'jyacobsohn1@springer.com', 2);
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Natalee', '9149 Londonderry Trail', 'QUEBEC', 'Florida', '34108', 'Canada', 'Natalee Aitken', '941-407-7198', 'naitken2@usda.gov', 3);
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Egor', '4957 Tennessee Way', 'Houston', 'QUEBEC', '77020', 'Canada', 'Egor Vevers', '713-678-3906', 'evevers3@huffingtonpost.com', 4);
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Ilaire', '91 Reindahl Lane', 'Bonita Springs', 'QUEBEC', '34135', 'Canada', 'Ilaire Groundwater', '941-752-4498', 'igroundwater4@ow.ly', 5);
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Bobina', '483 Dottie Alley', 'Midland', 'Texas', 'QUEBEC', 'Canada', 'Bobina Hannan', '432-200-3874', 'bhannan5@hubpages.com', 6);
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Crystie', '377 Fairview Plaza', 'Philadelphia', 'ONTARIO', '19120', 'Canada', 'Crystie Kennicott', '267-110-5092', 'ckennicott6@indiatimes.com', 7);
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Marco', '54857 Reinke Way', 'Seattle', 'QUEBEC', '98185', 'Canada', 'Marco Stowe', '206-896-8011', 'mstowe7@angelfire.com', 8);
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Bat', '72 Atwood Road', 'Wilmington', 'Saskatchewan', '28405', 'Canada', 'Bat Kegley', '910-839-8170', 'bkegley8@delicious.com', 9);
+insert into Client (clientName, clientAddress, city, province, postalcode, country, contactName, phoneNumber, email, pharmID) values ('Tilda', '81 Meadow Vale Terrace', 'Houston', 'Manitoba', '77293', 'Canada', 'Tilda Skeermor', '281-330-8334', 'tskeermor9@netlog.com', 10);
+
 
 --Task (updated)
 insert into Task (task, EmployeeID, facilityID) values ('cooking', 22,20);
@@ -219,7 +247,27 @@ insert into Purchase (purchaseID, productPurchased, productQuantity, productPric
 insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (9, 'Pfizer-BioNTech', 100, 11200);
 insert into Purchase (purchaseID, productPurchased, productQuantity, productPrice,) values (10, 'Moderna', 50, 5750);
 
-
+--ResearchTeam
+   insert into ResearchTeam (teamID, teamLeader, teamName, researchCenterID) values (1, 'Damiano', 'Zulauf and Sons', 1);
+   insert into ResearchTeam (teamID, teamLeader, teamName, researchCenterID) values (2, 'Alica', 'Lubowitz Inc', 2);
+   insert into ResearchTeam (teamID, teamLeader, teamName, researchCenterID) values (3, 'Crichton', 'Emmerich-Goodwin', 3);
+   insert into ResearchTeam (teamID, teamLeader, teamName, researchCenterID) values (4, 'Mari', 'Torp and Sons', 4);
+   insert into ResearchTeam (teamID, teamLeader, teamName, researchCenterID) values (5, 'Waverley', 'Schulist, Stroman and Bechtelar', 5);
+  
+  --Project 
+   insert into Project (projectID, name, startDate, endDate, teamID, researchCenterID) values (1, 'Conroy and Sons', '2021-09-20', '2022-01-04', 1, 1);
+   insert into Project (projectID, name, startDate, endDate, teamID, researchCenterID) values (2, 'Terry, Hilpert and Rolfson', '2021-05-20', '2022-12-14', 2, 2);
+   insert into Project (projectID, name, startDate, endDate, teamID, researchCenterID) values (3, 'Deckow-Stiedemann', '2021-04-05', '2021-02-28', 3, 3);
+   insert into Project (projectID, name, startDate, endDate, teamID, researchCenterID) values (4, 'Heathcote-Ebert', '2022-10-07', '2021-08-10', 4, 4);
+   insert into Project (projectID, name, startDate, endDate, teamID, researchCenterID) values (5, 'Glover, Spinka and Funk', '2021-09-25', '2021-01-17', 5, 5);
+  
+  --Researcher 
+   insert into Researcher (researcherID, startDate, endDate, totalHoursWorking, teamID, projectID, researchCenterID, employeeID, pharmID) values (1, '2021-12-15', '2022-10-27', 74, 1, 1, 1,2,1);
+   insert into Researcher (researcherID, startDate, endDate, totalHoursWorking, teamID, projectID, researchCenterID, employeeID, pharmID) values (2, '2022-03-29', '2022-04-01', 53, 2, 2, 2,3,2);
+   insert into Researcher (researcherID, startDate, endDate, totalHoursWorking, teamID, projectID, researchCenterID, employeeID, pharmID) values (3, '2020-12-10', '2022-11-05', 12, 3, 3, 3,4,3);
+   insert into Researcher (researcherID, startDate, endDate, totalHoursWorking, teamID, projectID, researchCenterID, employeeID, pharmID) values (4, '2022-09-30', '2020-12-28', 94, 4, 4, 4,5,5);
+   insert into Researcher (researcherID, startDate, endDate, totalHoursWorking, teamID, projectID, researchCenterID, employeeID, pharmID) values (5, '2021-03-09', '2022-06-06', 69, 5, 5, 5,6,4);
+   
 
 
 SELECT Table_name, COUNT (*) as count
