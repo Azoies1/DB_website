@@ -62,7 +62,7 @@ Create Table Employee (
 
 --HistoryOfEmployment
 Create Table HistoryOfEmployment(
-    hoeID INT AUTO_INCREMENT,
+    historyOfEmploymentID INT AUTO_INCREMENT,
     employeeID INT,
     taskID INT,
     PRIMARY KEY (hoeID),
@@ -145,7 +145,8 @@ Create Table Contract (
 CREATE TABLE HeadOffice (
 	headOfficeID INT AUTO_INCREMENT,
     webSite VARCHAR (255),
-    emailAddress VARCHAR (255),
+    publicEmail VARCHAR (255),
+    clientEmail VARCHAR(255),
     ceoID INT UNIQUE,
     facilityID INT,
     PRIMARY KEY (headOfficeID),
@@ -157,7 +158,7 @@ CREATE TABLE HeadOffice (
 
 --ResearchCenter
 CREATE TABLE ResearchCenter (
-    researchersID INT AUTO_INCREMENT,
+    researchCenterID INT AUTO_INCREMENT,
     facilityID INT,
     PRIMARY KEY(researchersID),
     FOREIGN KEY (facilityID) 
