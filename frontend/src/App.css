@@ -150,6 +150,13 @@ td:hover::after, th:hover::after {
   z-index: -1;
 }
 
+.table-flow {
+  overflow: auto,
+  height= 300px
+}
+
 .table-Facility, .table-Employee, .table-Team, .table-Project, .table-Product, .table-Client, .table-Contract {
   display:none;
 }
+
+

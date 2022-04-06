@@ -50,9 +50,12 @@ function App() {
             uniqueKey = key
           }
         }
-        console.log(uniqueKey)
       })
-      return <BootstrapTable keyField= {uniqueKey} data = {props.data } columns = { columns } />
+      return <BootstrapTable 
+                keyField= {uniqueKey} 
+                data = {props.data } 
+                columns = { columns } 
+                />
    }
    return null
   }
@@ -92,7 +95,9 @@ function App() {
           <a href="#" onClick={() => initialTable('Contract')}>Contract</a>
           </div>
         </div>
-        <TableGen data ={appData.tableData} />
+        <div className='table-flow'>
+          <TableGen data ={appData.tableData} />
+        </div>
     </div>
   );
 }

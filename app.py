@@ -77,7 +77,7 @@ def sqlGet(tableName):
 
         print(stmt)
         result = SQLconnec.execute(stmt)
-        pageResult += (json.dumps([dict(r) for r in result]))
+        pageResult += (json.dumps([dict(r) for r in result], default=str))
 
 
     else:
