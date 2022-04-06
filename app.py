@@ -17,7 +17,9 @@ def index(name=None):
 @app.route('/addEntry')
 def addEntry():
     return render_template('addentry.html')
-
+@app.route('/specQueries')
+def specQueries():
+    return render_template('specialqueries.html')
 @app.route('/sql/<tableName>', methods = ["GET"])
 def sqlQuery(tableName):
     

@@ -139,4 +139,7 @@ html {
   .table-Facility, .table-Employee, .table-Team, .table-Project, .table-Product, .table-Client, .table-Contract {
     display:none;
   }
+  .table-Employee{
+    width: 150%;
+  }
   

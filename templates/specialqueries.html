@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Simple Database Application System for the COVID-19 Pharmaceutical Companies</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+    <a href="{{ url_for('index') }}">
+        <button type="button" class="topbtn">
+            View Table
+        </button>
+    </a>
+    <a href="{{ url_for('addEntry') }}">
+        <button type="button" class="topbtn">
+            Add An Entry
+        </button>
+    </a>
+    <a href="{{ url_for('specQueries') }}">
+        <button type="button" class="topbtn">
+            Special Queries
+        </button>
+    </a>
+
+    <br/>
+    <h2>A Simple Database Application System for the COVID-19 Pharmaceutical Companies</h2>
+    <br/>
+    
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
+<script>
+    function setVisibility(tableName){
+        const tablesToHide = document.getElementsByClassName('toHide');
+        for (const tableToHide of tablesToHide) {
+            tableToHide.style.display='none';
+        }
+        const tablestoShow = document.getElementsByClassName(tableName);
+        tablestoShow[0].style.display='block';
+    }
+</script>
+
+<div class="dropdown">
+  <button class="dropbtn">Choose One</button>
+  <div class="dropdown-content">
+  <a href="#" onclick="setVisibility('table-Company')">Company</a>
+  <a href="#" onclick="setVisibility('table-Facility')">Facility</a>
+  <a href="#" onclick="setVisibility('table-Employee')">Employee</a>
+  <a href="#" onclick="setVisibility('table-Team')">Team</a>
+  <a href="#" onclick="setVisibility('table-Project')">Project</a>
+  <a href="#" onclick="setVisibility('table-Product')">Product</a>
+  <a href="#" onclick="setVisibility('table-Client')">Client</a>
+  <a href="#" onclick="setVisibility('table-Contract')">Contract</a>
+  </div>
+</div>
+<div class="table-Query11 toHide">
+    <h3>Query-11</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Location</th>
+                    <th>CEO</th>
+                    <th>Number of Employees</th>
+                    <th>Number of reserach facilities</th>
+                    <th>Total number of reserachers</th>
+                    <th>Number of manufacturing facilities</th>
+                    <th>Production capacities</th>
+                    <th>Number of warehouses</th>
+                    <th>Number of capacities for the warehouses</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for companies in Company %}
+                <tr>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla}}</td>
+                    <td>{{ company.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Query12 toHide">
+    <h3>Query-12</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Country Name</th>
+                    <th>Total number of capacities for the warehouses</th>
+              
+                </tr>
+            </thead>
+            <tbody>
+                {% for facilities in Facility %}
+                <tr>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Query13 toHide">
+    <h3>Query-13</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Head office location</th>
+                    <th>Country Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employees in Employee %}
+                <tr>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Query14 toHide">
+    <h3>Query-14</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name of client</th>
+                    <th>Contract Date</th>
+                    <th>Product Name</th>
+                    <th>Quantity purchased</th>
+                    <th>Total value of the contract</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teams in Team %}
+                <tr>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Query15 toHide">
+    <h3>Query-15</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Name of pharmaceutical company</th>
+                    <th>Contract date</th>
+                    <th>Product name</th>
+                    <th>Quantity purchased</th>
+                    <th>Total value of the contract</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for projects in Project %}
+                <tr>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                    <td>{{ contract.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Query16 toHide">
+    <h3>Query-16</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>SSN</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Citizenship</th>
+                    <th>Company Name</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for products in Product %}
+                <tr>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Query17 toHide">
+    <h3>Query-17</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Total number of hours</th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+                {% for clients in Client %}
+                <tr>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+<div class="table-Query18 toHide">
+    <h3>Query-18</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Total number of hours</th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+                {% for clients in Client %}
+                <tr>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                    <td>{{ researcher.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+<div class="table-Query19 toHide">
+    <h3>Query-19</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Adress</th>
+                    <th>City</th>
+                    <th>Team Name</th>
+                    <th>Project Name</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Total number of reserachers</th>
+                    <th>Total number of hours</th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+                {% for clients in Client %}
+                <tr>
+                    <td>{{ researchcentre.blabla }}</td>
+                    <td>{{ researchcentre.blabla }}</td>
+                    <td>{{ researchcentre.blabla }}</td>
+                    <td>{{ researchcentre.blabla }}</td>
+                    <td>{{ researchcentre.blabla }}</td>
+                    <td>{{ researchcentre.blabla }}</td>
+                    <td>{{ researchcentre.blabla }}</td>
+                    <td>{{ researchcentreny.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+
+<div class="table-Query20 toHide">
+    <h3>Query-20</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Year</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for contracts in Contract %}
+                <tr>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                    <td>{{ company.blabla }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

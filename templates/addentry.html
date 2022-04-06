@@ -19,7 +19,7 @@
             Add An Entry
         </button>
     </a>
-    <a href="">
+    <a href="{{ url_for('specQueries') }}">
         <button type="button" class="topbtn">
             Special Queries
         </button>
@@ -32,13 +32,13 @@
 <p>Move the mouse over the button to open the dropdown menu.</p>
 
 <script>
-    function setVisibility(formName){
-        const formsToHide = document.getElementsByClassName('toHide');
-        for (const formToHide of formsToHide) {
-            formToHide.style.display='none';
+    function setVisibility(tableName){
+        const tablesToHide = document.getElementsByClassName('toHide');
+        for (const tableToHide of tablesToHide) {
+            tableToHide.style.display='none';
         }
-        const formtoShow = document.getElementsByClassName(formName);
-        formstoShow[0].style.display='block';
+        const tablestoShow = document.getElementsByClassName(tableName);
+        tablestoShow[0].style.display='block';
     }
 </script>
 <div class="dropdown">
@@ -55,290 +55,211 @@
   </div>
 </div>
 
-<h2>Add An Entry</h2>
-    <div class="dropdown">
-  <button class="dropbtn">Choose One</button>
-  <div class="dropdown-content">
-  <a href="#">Company</a>
-  <a href="#">Facility</a>
-  <a href="#">Employee</a>
-  <a href="#">Team</a>
-  <a href="#">Project</a>
-  <a href="#">Product</a>
-  <a href="#">Client</a>
-  <a href="#">Conttract</a>
-     
-  </div>
+<div class="table-Company toHide">
+    <form action="/action_page.js">
+        <p>Company</p>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="John"><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" value="Doe"><br>
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city" value="John"><br>
+        <label for="province">Province:</label><br>
+        <input type="text" id="province" name="province" value="Doe"><br>
+        <label for="postalcode">Postal Code:</label><br>
+        <input type="text" id="postal" name="postal" value="John"><br>
+        <label for="country">Country:</label><br>
+        <input type="text" id="country" name="country" value="Doe"><br>
+        <label for="phnumber">Phone Number:</label><br>
+        <input type="text" id="phnumber" name="phnumber" value="John"><br>
+        <label for="pharmID">Pharm ID:</label><br>
+        <input type="text" id="pharmID" name="pharmID" value="Doe"><br>
+        <input type="submit" value="Submit">
+        <input type="submit" value="Delete">
+    </form>
 </div>
 
+<div class="table-Facility toHide">
 <form action="/action_page.js">
   <p>Facility</p>
   <label for="name">Name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="text" id="name" name="name" value="John"><br>
   <label for="address">Address:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <input type="text" id="address" name="address" value="Doe"><br>
   <label for="city">City:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="text" id="city" name="city" value="John"><br>
   <label for="province">Province:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <input type="text" id="province" name="province" value="Doe"><br>
   <label for="postalcode">PostalCode:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="coutry">Country:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <input type="text" id="postal" name="postal" value="John"><br>
+  <label for="country">Country:</label><br>
+  <input type="text" id="country" name="country" value="Doe"><br>
   <label for="phnumber">Phone Number:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="text" id="phnumber" name="phnumber" value="John"><br>
   <label for="pharmID">Pharm ID:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
- 
- 
-
+  <input type="text" id="pharmID" name="pharmID" value="Doe"><br>
   <input type="submit" value="Submit">
   <input type="submit" value="Delete">
 </form> 
+</div>
+
+<div class="table-Employee toHide">
 <form action="/action_page.js">
   <p>Employee</p>
   <label for="fname">First Name:</label><br>
   <input type="text" id="fname" name="fname" value="John"><br>
   <label for="lname">Last Name:</label><br>
   <input type="text" id="lname" name="lname" value="Doe"><br>
-  <label for="city">City:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="province">Province:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
-  <label for="postalcode">PostalCode:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="coutry">Country:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <label for="birthday">Date of Birth:</label><br>
+  <input type="date" id="birthday" name="birthday"><br>
+  <label for="ssn">SSN:</label><br>
+  <input type="text" id="ssn" name="ssn" value="Doe"><br>
   <label for="phnumber">Phone Number:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="pharmID">Pharm ID:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
- 
- 
-
+  <input type="text" id="phnumber" name="phnumber" value="John"><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address" value="Doe"><br>
+  <label for="city">City:</label><br>
+  <input type="text" id="city" name="city" value="John"><br>
+  <label for="province">Province:</label><br>
+  <input type="text" id="province" name="province" value="Doe"><br>
+  <label for="postalcode">PostalCode:</label><br>
+  <input type="text" id="postal" name="postal" value="John"><br>
+  <label for="country">Country:</label><br>
+  <input type="text" id="country" name="country" value="Doe"><br>
+  <label for="citizenship">Citizenship:</label><br>
+  <input type="text" id="citizenship" name="citizenship" value="Doe"><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" value="Doe@john.com"><br>
+  <label for="position">Position:</label><br>
+  <input type="text" id="position" name="position" value="Doe"><br>
+  <label for="salary">Salary:</label><br>
+  <input type="text" id="salary" name="salary" value="Doe"><br>
+  <label for="startdate">Start Date:</label><br>
+  <input type="date" id="startdate" name="stardate"><br>
   <input type="submit" value="Submit">
   <input type="submit" value="Delete">
 </form> 
+</div>
+
+<div class="table-Team toHide">
 <form action="/action_page.js">
   <p>Team</p>
-  <label for="fname">First Name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last Name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" value="John"><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address" value="Doe"><br>
   <label for="city">City:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="text" id="city" name="city" value="John"><br>
   <label for="province">Province:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <input type="text" id="province" name="province" value="Doe"><br>
   <label for="postalcode">PostalCode:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="coutry">Country:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <input type="text" id="postal" name="postal" value="John"><br>
+  <label for="country">Country:</label><br>
+  <input type="text" id="country" name="country" value="Doe"><br>
   <label for="phnumber">Phone Number:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="text" id="phnumber" name="phnumber" value="John"><br>
   <label for="pharmID">Pharm ID:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
- 
- 
-
+  <input type="text" id="pharmID" name="pharmID" value="Doe"><br>
   <input type="submit" value="Submit">
   <input type="submit" value="Delete">
 </form> 
+</div>
+
+<div class="table-Project toHide">
 <form action="/action_page.js">
   <p>Project</p>
-  <label for="fname">First Name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last Name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" value="John"><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address" value="Doe"><br>
   <label for="city">City:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="text" id="city" name="city" value="John"><br>
   <label for="province">Province:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <input type="text" id="province" name="province" value="Doe"><br>
   <label for="postalcode">PostalCode:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="coutry">Country:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <input type="text" id="postal" name="postal" value="John"><br>
+  <label for="country">Country:</label><br>
+  <input type="text" id="country" name="country" value="Doe"><br>
   <label for="phnumber">Phone Number:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="text" id="phnumber" name="phnumber" value="John"><br>
   <label for="pharmID">Pharm ID:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
- 
- 
-
+  <input type="text" id="pharmID" name="pharmID" value="Doe"><br>
   <input type="submit" value="Submit">
   <input type="submit" value="Delete">
 </form> 
+</div>
+
+<div class="table-Product toHide">
 <form action="/action_page.js">
   <p>Product</p>
-  <label for="fname">First Name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last Name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
-  <label for="city">City:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="province">Province:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
-  <label for="postalcode">PostalCode:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="coutry">Country:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
-  <label for="phnumber">Phone Number:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="pharmID">Pharm ID:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
- 
- 
-
+  <label for="productid">Product ID:</label><br>
+  <input type="text" id="productID" name="productID" value="John"><br>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" value="Doe"><br>
+  <label for="description">Description:</label><br>
+  <input type="text" id="description" name="description" value="John"><br>
+  <label for="volume">Volume:</label><br>
+  <input type="text" id="volume" name="volume" value="Doe"><br>
+  <label for="weight">Weight:</label><br>
+  <input type="text" id="weight" name="weight" value="John"><br>
+  <label for="deafultprice">Default Price:</label><br>
+  <input type="text" id="defaultPrice" name="defaultPrice" value="Doe"><br>
+  <label for="status">Status:</label><br>
+  <input type="text" id="status" name="status" value="John"><br>
+  <label for="purchaseID">Purchase ID:</label><br>
+  <input type="text" id="purchaseID" name="purchaseID" value="Doe"><br>
   <input type="submit" value="Submit">
   <input type="submit" value="Delete">
 </form> 
+</div>
+
+<div class="table-Client toHide">
     <form action="/action_page.js">
   <p>Client</p>
-  <label for="fname">First Name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last Name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" value="John"><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address" value="Doe"><br>
   <label for="city">City:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="text" id="city" name="city" value="John"><br>
   <label for="province">Province:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <input type="text" id="province" name="province" value="Doe"><br>
   <label for="postalcode">PostalCode:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="coutry">Country:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
+  <input type="text" id="postal" name="postal" value="John"><br>
+  <label for="country">Country:</label><br>
+  <input type="text" id="country" name="country" value="Doe"><br>
   <label for="phnumber">Phone Number:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="text" id="phnumber" name="phnumber" value="John"><br>
   <label for="pharmID">Pharm ID:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
- 
- 
-
+  <input type="text" id="pharmID" name="pharmID" value="Doe"><br>
   <input type="submit" value="Submit">
   <input type="submit" value="Delete">
 </form> 
+</div>
+
+<div class="table-Contract toHide">
     <form action="/action_page.js">
   <p>Contract</p>
-  <label for="fname">First Name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last Name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
-  <label for="city">City:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="province">Province:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
-  <label for="postalcode">PostalCode:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="coutry">Country:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
-  <label for="phnumber">Phone Number:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="contractID">Contract ID:</label><br>
+  <input type="text" id="contractID" name="contractID" value="John"><br>
+  <label for="employeeID">Employee ID:</label><br>
+  <input type="text" id="employeeID" name="employeeID" value="Doe"><br>
+  <label for="name">Employee Name Signed Contract:</label><br>
+  <input type="text" id="name" name="name" value="John"><br>
+  <label for="date">Date of Signed Contract:</label><br>
+  <input type="date" id="date" name="date"><br>
+  <label for="deliverydate">Expected Delivery Day Product:</label><br>
+  <input type="text" id="deliverydate" name="deliverydate" value="John"><br>
+  <label for="clientID">Client ID:</label><br>
+  <input type="text" id="clientID" name="clientID" value="Doe"><br>
   <label for="pharmID">Pharm ID:</label><br>
   <input type="text" id="lname" name="lname" value="Doe"><br>
- 
- 
-
   <input type="submit" value="Submit">
   <input type="submit" value="Delete">
 </form> 
+</div>
 
 <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-    <div class="table-Contract toHide">
-    <h3>Contracts</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Contract ID</th>
-                    <th>Employee ID</th>
-                    <th>Employee Name Signed Contract</th>
-                    <th>Date Of Signed Contract</th>
-                    <th>Expected Delivery Day Product</th>
-                    <th>Client ID</th>
-                    <th>Pharm ID</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for contracts in Contract %}
-                <tr>
-                    <td>{{ contracts.contractID }}</td>
-                    <td>{{ contracts.employeeID }}</td>
-                    <td>{{ contracts.employeeNameSignedContract }}</td>
-                    <td>{{ contracts.dateOfSignedContract }}</td>
-                    <td>{{ contracts.expectedDeliveryDayProduct }}</td>
-                    <td>{{ contracts.clientID }}</td>
-                    <td>{{ contracts.pharmID }}</td>
-                    <td><button>EDIT</button></td>
-                    <td><button>DELETE</button></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-</div><div class="table-Contract toHide">
-    <h3>Contracts</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Contract ID</th>
-                    <th>Employee ID</th>
-                    <th>Employee Name Signed Contract</th>
-                    <th>Date Of Signed Contract</th>
-                    <th>Expected Delivery Day Product</th>
-                    <th>Client ID</th>
-                    <th>Pharm ID</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for contracts in Contract %}
-                <tr>
-                    <td>{{ contracts.contractID }}</td>
-                    <td>{{ contracts.employeeID }}</td>
-                    <td>{{ contracts.employeeNameSignedContract }}</td>
-                    <td>{{ contracts.dateOfSignedContract }}</td>
-                    <td>{{ contracts.expectedDeliveryDayProduct }}</td>
-                    <td>{{ contracts.clientID }}</td>
-                    <td>{{ contracts.pharmID }}</td>
-                    <td><button>EDIT</button></td>
-                    <td><button>DELETE</button></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-</div><div class="table-Contract toHide">
-    <h3>Contracts</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Contract ID</th>
-                    <th>Employee ID</th>
-                    <th>Employee Name Signed Contract</th>
-                    <th>Date Of Signed Contract</th>
-                    <th>Expected Delivery Day Product</th>
-                    <th>Client ID</th>
-                    <th>Pharm ID</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for contracts in Contract %}
-                <tr>
-                    <td>{{ contracts.contractID }}</td>
-                    <td>{{ contracts.employeeID }}</td>
-                    <td>{{ contracts.employeeNameSignedContract }}</td>
-                    <td>{{ contracts.dateOfSignedContract }}</td>
-                    <td>{{ contracts.expectedDeliveryDayProduct }}</td>
-                    <td>{{ contracts.clientID }}</td>
-                    <td>{{ contracts.pharmID }}</td>
-                    <td><button>EDIT</button></td>
-                    <td><button>DELETE</button></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-</div>
 
 </body>
 </html>
-
